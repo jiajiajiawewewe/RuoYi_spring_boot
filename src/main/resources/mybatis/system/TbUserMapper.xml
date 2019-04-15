@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.system.tbUser.mapper.TbUserMapper">
+    
+    <resultMap type="TbUser" id="TbUserResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="age"    column="age"    />
+    </resultMap>
+	
+	<sql id="selectTbUserVo">
+        select id, name, age from tb_user
+    </sql>
+	
+    <select id="selectTbUserList" parameterType="TbUser" resultMap="TbUserResult">
+        <include refid="selectTbUserVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+             <if test="name != null  and name != '' "> and name = #{name}</if>
+             <if test="age != null "> and age = #{age}</if>
+         </where>
+    </select>
+    
+    <select id="selectTbUserById" parameterType="Integer" resultMap="TbUserResult">
+        <include refid="selectTbUserVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertTbUser" parameterType="TbUser">
+        insert into tb_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null  ">id,</if>
+			<if test="name != null  and name != ''  ">name,</if>
+			<if test="age != null  ">age,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null  ">#{id},</if>
+			<if test="name != null  and name != ''  ">#{name},</if>
+			<if test="age != null  ">#{age},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateTbUser" parameterType="TbUser">
+        update tb_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null  and name != ''  ">name = #{name},</if>
+            <if test="age != null  ">age = #{age},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteTbUserById" parameterType="Integer">
+        delete from tb_user where id = #{id}
+    </delete>
+	
+    <delete id="deleteTbUserByIds" parameterType="String">
+        delete from tb_user where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
