@@ -1,6 +1,6 @@
 ## 平台简介
 
-一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适的。 
+一直想做一款后台管理系统。毕设系统
 ## 内置功能
 
 1.  用户管理：用户是系统操作者，该功能主要完成系统用户配置。
@@ -43,9 +43,7 @@
         <td><img src="https://oscimg.oschina.net/oscnet/197ddc2fdffc27020f8624bd7ca1a971f61.jpg"/></td>
         <td><img src="https://oscimg.oschina.net/oscnet/a2dabea752d7d70aede20908dee0b419829.jpg"/></td>
     </tr> 
- http://ruoyi.vip  
 
- http://doc.ruoyi.vip
 	<tr>
         <td><img src="https://oscimg.oschina.net/oscnet/c5699c5726b5aebde71a37bb5163d840bc2.jpg"/></td>
         <td><img src="https://oscimg.oschina.net/oscnet/24740d59377e826d0d8664ebad66dc84abd.jpg"/></td>
@@ -55,4 +53,4 @@
         <td><img src="https://oscimg.oschina.net/oscnet/5f3d39a141f21f81b90536f391b8408f1fa.jpg"/></td>
     </tr>
 </table>
- 
+
